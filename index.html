@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>デフラグのサイト</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <style>
+    @font-face {
+      font-family: "GenEiMonogo";
+      src: url("GenEiMonoCode-Regular.ttf");
+    }
+
+    body {
+      margin: 0;
+      font-family: "GenEiMonogo", sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #383f41, #2d3133);
+      min-height: 100vh;
+    }
+
+    /* 上バー */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 10px;
+      background: rgba(20, 20, 20, 0.55);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .title {
+      font-weight: bold;
+      margin-right: 10px;
+      white-space: nowrap;
+    }
+
+    .topbar a {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 500px;
+      cursor: pointer;
+      transition: 0.2s;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .topbar a:hover {
+      background: rgba(255,255,255,0.15);
+      transform: scale(1.08);
+    }
+
+    .topbar img {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* メイン */
+    .content {
+      padding: 100px 20px 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.158);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      display: none;
+    }
+
+    .card.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    a.link {
+      color: #7dd3fc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="title">デフラグのサイト (制作中)</div>
+
+    <a onclick="showPage('home')"><img src="Home.png" /></a>
+    <a onclick="showPage('profile')"><img src="profile.png" /></a>
+    <a onclick="showPage('collection')"><img src="device.png" /></a>
+    <a onclick="showPage('links')"><img src="link.png" /></a>
+  </div>
+
+  <div class="content">
+
+    <!-- HOME -->
+    <section id="home" class="card active">
+      <h1>ホーム</h1>
+      <p>これは私（デフラグ）のことについて自分でまとめたクソみてえなサイトです</p>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile" class="card">
+      <h1>プロフィール</h1>
+
+      <h2># 名前</h2>
+      <p>デフラグ・ウルフ（今はデフラグです）<br>あ、ちなみに本名じゃないよ笑</p>
+
+      <h2># 誕生日</h2>
+      <p>2012年4月16日だよ<br>あ、ちなみに本当だよ笑</p>
+
+      <h2># 住所</h2>
+      <p>広島県広島市中区（これ以上無理）<br>あ、ちなみに本t(((殴</p>
+
+      <h2># 主に何してる？</h2>
+      <p>メルカリで中古PCやスマホ買って遊んでます。<br>
+      あとは作曲とかUIデザインとか、よくわからんゲーム作ってます（ロブｶｽで）</p>
+
+      <h2># 普段は？</h2>
+      <p>さっき言った通りです。</p>
+
+      <h2># サイト見てくれた人へ</h2>
+      <p>サイト見る暇あるなら別のk((((殴殴暴力虐待拉致監禁<br>
+      サイト見てくれてありがとね。ちなみにデフラグだよ（？？？）</p>
+
+    </section>
+
+    <!-- COLLECTION -->
+    <section id="collection" class="card">
+      <h1>コレクション</h1>
+
+      <h3>スマホ</h3>
+      <p>
+      Xperia Z5 / XZ / X Performance / XZ1 / 1 III<br>
+      Galaxy S24 Ultra<br>
+      AQUOS Wish 3 / Sense 4 Basic<br>
+      LG It<br>
+      SHARP Android One（型番忘れ）<br>
+      Windows Phone（Docomoだった希ガス）
+      </p>
+
+      <h3>パソコン</h3>
+      <p>紹介面倒なのでまた今度</p>
+    </section>
+
+    <!-- LINKS -->
+    <section id="links" class="card">
+      <h1>リンク</h1>
+
+      <p>▶ YouTube<br><a class="link" href="https://www.youtube.com/@Defrag_User">https://www.youtube.com/@Defrag_User</a></p>
+
+      <p>▶ TikTok<br><a class="link" href="https://www.tiktok.com/@Defrag_User">https://www.tiktok.com/@Defrag_User</a></p>
+
+      <p>▶ Twitter(X)<br><a class="link" href="https://x.com/dehuraguwolf">https://x.com/dehuraguwolf</a></p>
+
+      <p>▶ 好きなサイト<br><a class="link" href="http://abehiroshi.la.coocan.jp">http://abehiroshi.la.coocan.jp</a></p>
+
+    </section>
+
+  </div>
+
+  <script>
+    function showPage(id) {
+      const pages = document.querySelectorAll('.card');
+
+      pages.forEach(p => {
+        p.classList.remove('active');
+        p.style.display = 'none';
+      });
+
+      const target = document.getElementById(id);
+      target.style.display = 'block';
+
+      setTimeout(() => {
+        target.classList.add('active');
+      }, 50);
+    }
+  </script>
+
+</body>
+</html>
